@@ -12,7 +12,8 @@ bs auth
 
 # Copy the URL from the output into your browser, sign in to BaseSpace, and approve. After that, `bs` on O2 is linked to your account.
 
-# 3. **List your BaseSpace projects** (note the project ID you want):
+# 3. **List your BaseSpace runs/projects** (note the project ID you want):
+bs list runs
 bs list projects
 
 # 4. **Go to the folder where you want the FASTQs** (e.g. scratch or group space):
