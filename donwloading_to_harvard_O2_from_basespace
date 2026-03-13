@@ -1,0 +1,25 @@
+# How to download Fastq.gz files from Illumina BaseSpace to Harvard O2
+
+# You need the BaseSpace CLI (`bs`) already installed on O2.
+
+## Steps
+
+# 1. **Log in to O2**
+ssh som906@transfer.rc.hms.harvard.edu
+
+# 2. **Authenticate with BaseSpace (do this once, or again if you get auth errors)**
+bs auth
+
+# Copy the URL from the output into your browser, sign in to BaseSpace, and approve. After that, `bs` on O2 is linked to your account.
+
+# 3. **List your BaseSpace projects** (note the project ID you want):
+bs list projects
+
+# 4. **Go to the folder where you want the FASTQs** (e.g. scratch or group space):
+cd /n/scratch/users/s/som906
+mkdir <Project Name>
+cd <Project Name>
+
+# 5. **Download the project’s fastq.gz files** (replace `<ID>` with the project ID from step 3):
+bs download project -i <ID> --extension=fastq.gz
+# The download may take a while for large runs. Keep the session open or run it in `screen`/`tmux` if needed.
